@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Confirmación de cuenta | INSPECTRA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .confirmation-main { min-height: 72vh; display: grid; place-items: center; padding: 4rem 1.25rem; }
+      .confirmation-card { width: min(100%, 640px); padding: clamp(2rem, 5vw, 3.5rem); text-align: center; border: 1px solid rgba(15, 46, 63, .12); border-radius: 28px; background: #fff; box-shadow: 0 22px 60px rgba(12, 37, 52, .09); }
+      .confirmation-mark { width: 72px; height: 72px; margin: 0 auto 1.25rem; border-radius: 22px; display: grid; place-items: center; color: #fff; background: #f47521; font-size: 2rem; font-weight: 900; }
+      .confirmation-card h1 { color: #0f2e3f; margin: 0; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+      .confirmation-card p { color: #52636c; line-height: 1.65; margin: 1rem auto; max-width: 520px; }
+      .confirmation-card .button { display: inline-flex; margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <main class="confirmation-main">
+      <section class="confirmation-card" aria-labelledby="confirmation-title">
+        <div class="confirmation-mark" aria-hidden="true">✓</div>
+        <p class="eyebrow">INSPECTRA</p>
+        <h1 id="confirmation-title">Confirmá tu cuenta de forma segura</h1>
+        <p>Si abriste este enlace desde el correo de INSPECTRA, regresá a la aplicación y elegí <strong>«Ya confirmé mi correo»</strong>. La aplicación verificará tu cuenta y activará Pro únicamente después de validar la licencia en el servidor.</p>
+        <p>Por seguridad, esta página no guarda ni muestra códigos, contraseñas ni tokens de acceso.</p>
+        <a class="button button-primary" href="vialai://auth/callback">Abrir INSPECTRA</a>
+      </section>
+    </main>
+    <script>
+      // Supabase legacy links can use URL fragments. Fragments never reach the
+      // web server; remove them immediately so they are not retained in browser
+      // history. The native callback is the only place that exchanges them.
+      if (window.location.hash || window.location.search) window.history.replaceState(null, '', window.location.pathname);
+    </script>
+  </body>
+</html>
